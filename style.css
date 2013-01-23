@@ -1,0 +1,1022 @@
+/*
+	Theme Name: Go Mobile First v1.0
+	Version: 1.0
+	Description: A mobile-first starter theme for WordPress
+	Author: Chris Ferdinandi
+	Author URI: http://gomakethings.com
+
+
+	Go Mobile First is a mobile-first starter theme for WordPress.
+	This isn't a framework. Actually, it's the opposite of a framework.
+	I've removed as much as possible, so you have a simple, clean
+	foundation to build on. I've added lots of comments to make things
+	as easy for you as possible. Enjoy!
+
+
+	WHAT IS MOBILE-FIRST?
+	Mobile-first is an approach to web design that's kind of like
+	graceful degredation in reverse. You start with a collection of
+	basic styles that work on all browsers (including older browsers and
+	not-so-smart phones), and then add progressive enhancements for
+	more capable browers/devices and bigger screens.
+
+	But mobile-first is about more than just how a site looks. While this theme 
+	is deliberately lightweight, you should also take some additional steps 
+	to improve the performance of your site.
+	http://gomakethings.com/how-to-trick-out-the-performance-of-your-wordpress-site/
+
+
+	POWERED BY HTML5
+	This theme makes use of the new HTML5 semantics. If you're not familiar with them,
+	you might want to familiarize yourself. "Dive Into HTML5" by Mark Pilgrim is a
+	good place to start. http://diveintohtml5.info/semantics.html
+
+
+	COLORS
+	Link Blue: #0088cc
+	Button Hover Blue: #005580
+	Dark Gray: #272727
+	Muted Gray: #808080
+	Gray Lines & Borders: #e5e5e5
+
+
+	FONT STACKS
+	"Helvetica Neue", Helvetica, Arial, sans-serif
+
+
+	TYPOGRAPHIC SCALE
+	14px, 15px, 17px (base), 20px, 23px, 26px, 30px, 34px, 51px, 68px, 85px, 102px
+
+
+	CONTENTS
+	1. Meyers CSS Reset & Normalized
+	2. Structure
+	3. Typography
+	4. Forms
+	5. Buttons
+	6. Icons
+	7. Images
+	8. Collapse & Fade
+	9. Tables
+	10. Navigation
+	11. Floats & Hides
+	12. Media Queries
+
+*/
+
+
+
+
+
+/*	1. MEYER'S RESET & NORMALIZED */
+
+/*	Removes browser-specific styling for better cross-browser consistency*/
+html, body, div, span, applet, object, iframe, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, 
+a, abbr, acronym, address, big, cite, code, 
+del, dfn, em, img, ins, kbd, q, s, samp, 
+small, strike, strong, sub, sup, tt, var, 
+b, u, i, center, 
+dl, dt, dd, ol, ul, li, 
+fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td, 
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary, 
+time, mark, audio, video { 
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 100%; 
+	font: inherit; 
+	vertical-align: baseline; 
+}
+
+/* Defines HTML5 element roles for older browser */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section { 
+	display: block; 
+}
+
+html { 
+	/* Prevents shifting content on short pages by always showing scroll bar */
+	overflow-y: scroll;
+	/* Prevent text auto-resizing in iOS */
+	-webkit-text-size-adjust: 100%; 
+	/* Prevent text auto-resizing on MS Mobile */
+	-ms-text-size-adjust: 100%; 
+} 
+
+/* Corrects inline-block display not defined in IE 8/9 */
+audio, canvas, video { 
+	display: inline-block; 
+	*display: inline; 
+	*zoom: 1; 
+}
+
+/* Prevents modern browsers from displaying audio without controls */
+audio:not([controls]) { 
+	display: none; 
+}
+
+/* Auto-resizes images, embeds and HTML5 videos on smaller screens */
+img, video { 
+	max-width: 100%; height: auto; 
+}
+
+/* Maintain image sharpness when resizing in MS browsers */
+img { 
+	-ms-interpolation-mode: bicubic; 
+}
+
+/* Addresses outline inconsistency between Chrome and other browsers */
+a:focus { 
+	outline: thin dotted; 
+	outline: 5px auto -webkit-focus-ring-color; 
+	outline-offset: -2px; 
+}
+
+/* Improves readability when focused and also mouse hovered in all browsers */
+a:hover, a:active { 
+	outline: 0; 
+}
+
+
+
+
+
+/*	2. STRUCTURE */
+
+/* Literally "contains" the content on the page  */
+.container {
+	/* Sets the maximum width of the content */
+	max-width: 640px; 
+	/* Centers the container */
+	margin: 0 auto; 
+	/* Adds a padding to the top of the container */
+	padding: 26px 0 0 0; 
+}
+
+
+
+
+
+/*	3. TYPOGRAPHY */
+
+body { 
+	/* Sets the master font stack for the site */
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	/* Sets the master font size for the site */
+	font-size: 17px; 
+	/* Sets the master line height for the site */
+	line-height: 25px; 
+	/* Sets the master font color for the site */
+	color: #272727; 
+	/* Sets the background color for the site */
+	background: #ffffff; 
+	/* Adds padding to the right and left to the text doesn't run edge to edge */
+	padding: 0 20px; 
+}
+
+p { 
+	/* Adds a margin to the bottom of each paragraph */
+	margin: 0 0 26px 0; 
+}
+
+/* For sections of text that should be smaller in size */
+.small { 
+	font-size: 15px; 
+	line-height: 23px; 
+}
+
+/* For sections of longform text that should be larger in size */
+.tall { 
+	font-size: 20px; 
+	line-height: 1.4em; 
+}
+
+/* For sections of longform text that should be largest in size */
+.grande { 
+	font-size: 23px; 
+	line-height: 1.4em; 
+}
+
+/* For sections of text that should be lighter in color */
+.muted { 
+	color: #808080; 
+}
+
+
+a { 
+	/* Sets the default link color */
+	color: #0088cc;
+	/* Prevents links from being underlined. Could be an accessibility concern with some link colors. */
+	text-decoration: none; 
+}
+
+a:hover { 
+	/* On hover, change link color */
+	color: #272727; 
+	/* On hover, add underline to links */
+	text-decoration: underline; 
+}
+
+.muted a { 
+	/* Override default color if link is in a muted section of text */
+	color: #272727; 
+}
+
+/* Prevent border and background changes for linked images */
+a img { 
+	border: none; 
+	background: none; 
+} 
+
+
+a:hover img { 
+	border: none; 
+	background: none; 
+	/* On hover, make image slightly transparent */
+	opacity:0.8; filter:alpha(opacity=80); 
+}
+
+
+ul, ol { 
+	/* Set padding for ordered and unordered lists */
+	padding: 0; 
+	/* Add margin to the bottom and left of ordered and unordered lists */
+	margin: 0 0 26px 26px; 
+}
+
+ul ul, ul ol, ol ol, ol ul { 
+	/* Remove bottom margin for sub-lists */
+	margin-bottom: 0; 
+}
+
+
+ul { 
+	/* Sets list style for unordered lists */
+	list-style: disc; 
+}
+
+ol { 
+	/* Sets list style for ordered lists */
+	list-style: decimal; 
+}
+
+li { 
+	/* Adds a slight margin between lists items */
+	margin: 0 0 8px 0; 
+}
+
+/* Overrides default list styles for unstyled, unordered lists */
+.unstyled { 
+	/* Removes left margin */
+	margin-left: 0; 
+	/* Removes default list style */
+	list-style: none; 
+}
+
+.unstyled > li {
+	/* Removes margin between list items */
+	margin: 0; 
+}
+
+/* 
+  Sets shared styling for all headers.
+  In addition to headings, also includes header classes.
+  These are used to add header styling to non-header elements (for semantic purposes),
+  or to use one header element but have it look like another (again, for semantics).
+*/
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { 
+	/* Sets line-height */
+	line-height: 1.2em;
+	/* Sets font weight */ 
+	font-weight: normal; 
+	/* Adds a bottom margin */
+	margin: 0 0 26px 0; 
+	/* Adds padding to the top (for more white space between sections) */
+	padding: 26px 0 0 0; 
+}
+
+/* Sets header specific styles like sizes and emphasis */
+h1, .h1 { 
+	font-size: 26px; 
+	/* Descreases the default top-padding for H1 elements, which are used for page titles */
+	padding-top: 14px; 
+}
+
+h2, .h2 { 
+	font-size: 23px; 
+}
+
+h3, .h3 { 
+	font-size: 20px; 
+}
+
+h4, h5, h6, .h4, .h5, .h6 { 
+	font-size: 15px; 
+	/* For H4 - H6, adds italics */
+	font-style: italic; 
+}
+
+h4, .h4 { 
+	/* Sets H4 to uppercase */
+	text-transform: uppercase; 
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, 
+.h1 a, .h2 a, .h3 a, .h4 a { 
+	/* Overrides default link color on headers */
+	color: #272727; 
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, 
+.h1 a:hover, .h2 a:hover, .h3 a:hover, .h4 a:hover { 
+	/* Overrides default link hover color on headers */
+	color: #0088cc;
+	/* Overrides default link hover underline behavior on headers */
+	text-decoration: none; 
+}
+
+/* Line styling */
+hr { 
+	/* Adds space above and below a line */
+	margin: 34px auto;
+	/* Remove all default borders */
+	border: 0; 
+	/* Adds a thin gray border to the top (which creates the line) */
+	border-top: 1px solid #e5e5e5; 
+	/* Adds a white border to the bottom (which hides a line that some browsers like to show) */
+	border-bottom: 1px solid #ffffff; 
+}
+
+/* Defines strong tags as bold */
+strong { 
+	font-weight: bold; 
+}
+
+/* Defines em tags as italic */
+em { 
+	font-style: italic; 
+}
+
+/* Shared styling for subset and superset text */
+sub, sup { 
+	position: relative; 
+	font-size: 85%; 
+	line-height: 0; 
+	vertical-align: baseline; 
+	margin-left: .3em; 
+}
+
+sup { 
+	/* Positions superset text higher than normal text */
+	top: -0.5em; 
+}
+
+sub { 
+	/* Positions subset text lower than normal text */
+	bottom: -0.25em; 
+}
+
+blockquote { 
+	/* Sets blockquotes as italic */
+	font-style: italic; 
+	/* Adds a thin gray border to the left of the quote */
+	border-left: 2px solid #e5e5e5; 
+	/* Adds a bottom margin to blockquotes */
+	margin: 0 0 26px 0; 
+	/* Adds padding to the left and right of the quote */
+	padding: 0 20px; 
+}
+
+/* Shared styling for displaying code and unformatted text */
+code, pre { 
+	padding: 0 3px 2px; 
+	font-family: Menlo, Monaco, "Courier New", monospace; 
+	font-size: 13px; 
+	color: #272727; 
+}
+
+code { 
+	padding: 3px 4px; 
+	color: #d14; 
+	background-color: #f7f7f9; 
+	border: 1px solid #e1e1e8; 
+	/* Adds rounded corners on modern browsers */
+		-webkit-border-radius: 3px; 
+		-moz-border-radius: 3px; 
+		border-radius: 3px; 
+}
+
+pre { 
+	/* Sets unformatted text box to span full width of page */
+	display: block; 
+	padding: 8.5px; 
+	margin: 0 0 26px 0; 
+	font-size: 13px; 
+	line-height: 20px; 
+	background-color: #f5f5f5; 
+	border: 1px solid #ccc; 
+	/* Adds rounded corners on modern browsers */
+		-webkit-border-radius: 4px; 
+		-moz-border-radius: 4px; 
+		border-radius: 4px; 
+	/* Preserves white space */
+	white-space: pre; 
+	/* Preserves white space */
+	white-space: pre-wrap; 
+	/* Forces word breaks to prevent horizontal scrolling */
+	word-break: break-all; 
+}
+
+/* Styling for code nested inside an unformatted text box */
+pre code { 
+	padding: 0; 
+	background-color: transparent; 
+}
+
+/* Adds styling for image captions (Wordpress automatically adds the class) */
+.wp-caption-text { 
+	font-size: 15px; 
+	font-style: italic; 
+	color: #808080; 
+	padding: 6px 0 0 0; 
+	text-align: center; 
+}
+
+
+
+
+
+/*	4. FORMS */
+/*	Some of this code taken from Twitter Bootstrap http://twitter.github.com/bootstrap/ */
+
+form, fieldset { 
+	/* Adds a margin to the bottom of forms and field sections */
+	margin-bottom: 26px; 
+}
+
+legend, label { 
+	/* Sets legends and labels to span full width of the page */
+	display: block; 
+	padding: 0; 
+	/* Adds a slight margin below legends and labels */
+	margin: 0 0 5px 0; 
+}
+
+/* Sets shared styles for inputs, text-boxes and select buttons */
+input, textarea, select { 
+	/* Font family, font size and line height should body 
+	and aren't always inherited by all browsers, therefore must be set here as well */
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: 17px; 
+		line-height: 25px; 
+	font-weight: normal;
+	color: #555555; 
+	/* Aligns text vertically within a field  */
+	vertical-align: middle;
+	/* Adds a margin to the bottom of each field */
+	margin-bottom: 20px; 
+	padding: 5px; 
+	border: 1px solid #ccc; 
+	/* Adds rounded corners on modern browsers */
+		-webkit-border-radius: 3px; 
+		-moz-border-radius: 3px; 
+		border-radius: 3px; 
+	/* Prevents weird padding/margin issues on fields */
+		-webkit-box-sizing: border-box; 
+		-moz-box-sizing: border-box; 
+		-ms-box-sizing: border-box; 
+		box-sizing: border-box; 
+}
+
+/*
+  Shared styling
+  .input-wide can be added to any input you would like to span full-width
+  .input-medium used to style comment form input fields
+*/
+.input-wide, .input-medium, textarea { 
+	display: block;
+	width: 100%; 
+}
+
+/* Used to style search form */
+.input-small { 
+	width: 55%; 
+}
+
+textarea { 
+	/* Sets height for textareas */
+	height: 200px; 
+}
+
+/* Overrides shared styling for radio buttons and checkboxes */
+input[type="image"], input[type="checkbox"], input[type="radio"] { 
+	width: auto; 
+	height: auto; 
+	padding: 0; 
+	margin: 0 0 3px 0; 
+	cursor: pointer; 
+}
+
+/* Adds styling when text is being entered into a field */
+input:focus, textarea:focus {
+	border-color: rgba(82, 168, 236, 0.8); 
+	/* Adds shadow effect to modern browsers */
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6); 
+		-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6); 
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6); 
+	outline: 0; 
+	outline: thin dotted \9; 
+}
+
+/* Overrides default focus styling for radio buttons and checkboxes */
+input[type="file"]:focus, input[type="checkbox"]:focus, select:focus { 
+	-webkit-box-shadow: none; 
+	-moz-box-shadow: none; 
+	box-shadow: none; 
+	outline: thin dotted; 
+	outline: 5px auto -webkit-focus-ring-color; 
+	outline-offset: -2px; 
+}
+
+
+
+
+
+/*	5. BUTTONS */
+
+/* 
+  Add this class any link to transform it into a button.
+  Also add it to buttons to override default button styling.
+  Taken from Twitter Bootstrap http://twitter.github.com/bootstrap/
+*/
+.btn { 
+	display: inline-block; 
+	padding: 6px 10px; 
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	font-size: 15px; 
+	line-height: 20px; 
+	font-weight: normal; 
+	color: #ffffff; 
+	background: #0088cc;
+	border: 1px solid #0088cc;
+	/* Adds rounded corners on modern browsers */
+		-webkit-border-radius: 4px; 
+		-moz-border-radius: 4px; 
+		border-radius: 4px; 
+	/* Adds a small margin on the left to provide space for side-by-side buttons */
+	*margin-left: .3em; 
+}
+
+/* Sets styling for buttons on hover */
+.btn:hover, a .btn:hover { 
+	background: #005580; 
+	border: 1px solid #005580; 
+	color: #ffffff; 
+	/* Prevents default underlining behavior on button links */
+	text-decoration: none; 
+}
+
+/* Sets styling for button when clicked (or active) */
+.btn:active { 
+	/* On modern browsers, adds inner shadow to provide appearance of being clicked  */
+		-webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05); 
+		-moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05); 
+		box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05); 
+	/* Prevents default outline effect on many browsers */
+	outline: 0; 
+}
+
+/* Add this class to links and buttons in addition to .btn to create bigger buttons */
+.btn-large { 
+	padding: 10px 15px; 
+	font-size: 17px; 
+	line-height: normal;
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	border-radius: 5px; 
+}
+
+/* Shared styling for buttons and links styled as buttons */
+button, .btn { 
+	/* Ensures cursor is always a pointer */
+	cursor: pointer; 
+	/* Centers text vertically in button */
+	vertical-align: middle; 
+	/* Prevents iOS from adding weird style overrides */
+	-webkit-appearance: none; 
+}
+
+.btn:first-child { 
+	/* Remove the left margin on the first button in a series to avoid weird spacing */
+	*margin-left: 0; 
+}
+
+/* Sets styling for .btn that's in focus */
+.btn:focus { 
+	outline: thin dotted; 
+	outline: 5px auto -webkit-focus-ring-color; 
+	outline-offset: -2px; 
+}
+
+
+
+
+
+/*	6. ICONS */
+/*
+	For crisp, lightweight icons on any device, you should use consider using an icon font.
+	Icon fonts are small in size (the one for my site is only 8kb), requires just one HTTP
+	request, and scale to any size while retaining sharpness.
+
+	IcoMoon is a free app that let's you build your own icon font set. It even provides you
+	with the styling. I highly recommend it. http://icomoon.io/#toHome
+
+	Add your icon styles here.
+*/
+
+
+
+
+
+/*	7. IMAGES */
+/* 	Some of this code taken from Twitter Bootstrap http://twitter.github.com/bootstrap/ */
+
+/* Add this class to images to add rounded corners in modern browsers */
+.img-rounded { 
+	-webkit-border-radius: 6px; 
+	-moz-border-radius: 6px; 
+	border-radius: 6px; 
+}
+
+/* Add this class to images to create polaroid effect with white borders */
+.img-polaroid { 
+	padding: 4px; 
+	background-color: #fff; 
+	border: 1px solid #ccc; 
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	/* Adds shadow in modern browsers */ 
+		-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
+		-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
+}
+
+/* Add this class to images to display them as circles in modern browsers */
+.img-circle { 
+	-webkit-border-radius: 50%; 
+	-moz-border-radius: 50%; 
+	border-radius: 50%; 
+}
+
+/* Adds styling to commentor avatars (class added automatically by WordPress) */
+.avatar { 
+	/* Aligns image to the left */
+	float: left; 
+	/* Adds a margin to the right to provide space between image and text */
+	margin-right: 15px; 
+}
+
+
+
+
+
+/*	8. COLLAPSE & FADE */
+/* 	Styling for collapsing mobile navigation */
+
+.collapse { 
+	/* Adds transition effect for modern browsers */
+		-webkit-transition: height 0.35s ease; 
+		-moz-transition: height 0.35s ease; 
+		-ms-transition: height 0.35s ease; 
+		-o-transition: height 0.35s ease; 
+		transition: height 0.35s ease; 
+	position: relative; 
+}
+
+/*
+  Hides collapsed content if javascript is enabled
+  js class is added to the body by javascript snippet in master JS file
+  Props to Brad Frost for the .js class trick http://bradfrost.github.com/this-is-responsive/
+*/
+.js .collapse { 
+	/* Sets content height to 0 pixels */
+	height: 0; 
+	/* Prevents content from showing anyways */
+	overflow: hidden; 
+}
+
+.collapse .in { 
+	/* When the menu is toggled, expand size to show the content */
+	height: auto; 
+}
+
+
+
+
+
+/*	9. TABLES */
+
+/* Overrides default browser styling on tables */
+table { max-width: 100%; border-collapse: collapse; border-spacing: 0; }
+
+/*
+  Basic table styling taken from Twitter Bootstrap.
+  Visit the site for examples and usage.
+  http://twitter.github.com/bootstrap/
+*/
+.table { width: 100%; margin-bottom: 18px; }
+.table th, .table td { padding: 8px; line-height: 18px; text-align: left; border-top: 1px solid #ddd; }
+.table th { font-weight: bold; vertical-align: bottom; }
+.table td { vertical-align: top; }
+.table thead:first-child tr th, .table thead:first-child tr td { border-top: 0; }
+.table tbody + tbody { border-top: 2px solid #ddd; }
+.table-condensed th, .table-condensed td { padding: 4px 5px; }
+.table-bordered { border: 1px solid #ddd; border-collapse: separate; *border-collapse: collapsed; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.table-bordered th + th, .table-bordered td + td, .table-bordered th + td, .table-bordered td + th { border-left: 1px solid #ddd; }
+.table-bordered thead:first-child tr:first-child th, .table-bordered tbody:first-child tr:first-child th, .table-bordered tbody:first-child tr:first-child td { border-top: 0; }
+.table-bordered thead:first-child tr:first-child th:first-child, .table-bordered tbody:first-child tr:first-child td:first-child { -webkit-border-radius: 4px 0 0 0; -moz-border-radius: 4px 0 0 0; border-radius: 4px 0 0 0; }
+.table-bordered thead:first-child tr:first-child th:last-child, .table-bordered tbody:first-child tr:first-child td:last-child { -webkit-border-radius: 0 4px 0 0; -moz-border-radius: 0 4px 0 0; border-radius: 0 4px 0 0; }
+.table-bordered thead:last-child tr:last-child th:first-child, .table-bordered tbody:last-child tr:last-child td:first-child { -webkit-border-radius: 0 0 0 4px; -moz-border-radius: 0 0 0 4px; border-radius: 0 0 0 4px; }
+.table-bordered thead:last-child tr:last-child th:last-child, .table-bordered tbody:last-child tr:last-child td:last-child { -webkit-border-radius: 0 0 4px 0; -moz-border-radius: 0 0 4px 0; border-radius: 0 0 4px 0; }
+
+
+
+
+
+/*	10. NAVIGATION */
+
+/* 
+  Overrides default link behavior for logo text.
+  Will inhert header link color (currently set to dark gray).
+*/
+.logo:hover { 
+	color: #272727; 
+	text-decoration: none; 
+}
+
+/* Navigation list styling */
+.nav { 
+	/* Set list to block element */
+	display: block;
+	float: none; 
+	margin: 0 auto; 
+	padding-top: 14px; 
+	/* Add gray lines above and below list */
+		border-top: 1px solid #e5e5e5; 
+		border-bottom: 1px solid #e5e5e5; 
+}
+
+/* Styling of individual nav elements */
+.nav > li { 
+	/* Display each item as an inline-block element */
+	display: inline-block;
+	float: none; 
+}
+
+/* Styling for nav elements that are links */
+.nav > li > a { 
+ 	float: none; 
+	/* Add padding between elements */
+	padding: 10px 10px 11px; 
+}
+
+/* Menu Button for collapsing menu on smaller screens */
+.responsive-nav { 
+	/* Hide by default. Enabled in responsive styling below. */
+	display: none; 
+}
+
+
+
+
+
+/*	11. FLOATS & HIDES */
+
+/* 
+  Shared styling for WordPress embedded images.
+  Centers all images.
+*/
+.alignleft, .alignright, .aligncenter, .alignnone { 
+	display: block;
+	text-align: center; 
+	margin-left: auto; 
+	margin-right: auto; 
+}
+
+/* Add class to text you want centered */
+.text-center { 
+	text-align: center; 
+}
+
+/* Add class to text you want aligned to the right */
+.text-right { 
+	text-align: right; 
+}
+
+/* 
+  Add class to text you want aligned to the left
+  (if it's right-aligned by default)
+  (you'll almost never need to do this)
+*/
+.text-left { 
+	text-align: left; 
+}
+
+/* Add this to elements you'd like to float to the right */
+.pull-right { 
+	float: right; 
+}
+
+/* Removes all margins and padding from an element */
+.no-space { 
+	margin: 0; 
+	padding: 0; 
+}
+
+/* 
+  Removes bottom margin and padding.
+  Used on headers with sub-titles and dates.
+*/
+.no-space-bottom { 
+	margin-bottom: 0;
+	padding-bottom: 0; 
+}
+
+/* Removes top margin and padding. */
+.no-space-top { 
+	margin-top: 0; 
+	padding-top: 0; 
+}
+
+/* 
+  Leave just a small amount of bottom margin 
+  Currently used just on the logo text 
+*/
+.small-space-bottom { 
+	margin-bottom: 8px; 
+	padding-bottom: 0; 
+}
+
+/*
+  Set top padding to 14px.
+  Can be used to reduce default top padding on headers,
+  or add padding to other elements.
+*/
+.padding-top { 
+	padding-top: 14px; 
+}
+
+/*
+  Set bottom margin to 34px.
+  Can be used to increase margin to elements.
+*/
+.margin-bottom { 
+	margin-bottom: 34px; 
+}
+
+/* 
+  Renders content in HTML but hides it off-screen.
+  Used for labels that you'd like to hide 
+  but are helpful for screen readers and the vision impaired.
+*/
+.screen-reader { 
+	position: absolute; 
+	top: -9999px; 
+	left:-9999px; 
+}
+
+/* 
+  Clears floats on groups of content.
+  .group is the new semantically preferred clearfix class.
+  .container and blockquote added for reduced code.
+ */
+.group:before, .group:after, 
+.container:before, .container:after, 
+blockquote:before, blockquote:after, 
+q:before, q:after { 
+	display: table; 
+	content: ""; 
+	*zoom: 1; 
+}
+
+.group:after, 
+.container:after { 
+	clear: both; 
+}
+
+
+
+
+
+/*	12. MEDIA QUERIES */
+/*	Progressive enchancement for more robust browsers/devices and bigger screens */
+
+
+/*
+  For screens 680 pixels or less in width
+  (This is the .container size plus 20 pixels of padding on the left and right)
+*/
+@media (max-width: 680px) { 
+/* If javascript enabled...  */
+
+	/* Hide the default navigation elements */
+	.js .nav-mobile { 
+		overflow: hidden; 
+		height: 0; 
+	}
+
+	/* Display the menu toggle button (hidden by default above for more basic browsers) */
+	.js .responsive-nav { 
+		display: block; 
+	}
+
+	/* Remove the border elements from the nav menu */
+	.js .nav-mobile > .nav { 
+		border: none; 
+	}
+
+	/* Display the nav links stacked vertically instead of horizontally */
+	.js .nav > li { 
+		display: block; 
+	}
+}
+
+
+
+/* For screens greater than 680 pixels in width */
+@media (min-width: 681px) {
+
+	/* Increase the line height for readability */
+	body, input, textarea, select { 
+		line-height: 27px; 
+	}
+
+	/* Increase the font size */
+	.tall { 
+		font-size: 23px; 
+	}
+
+	/* Increase the font size */
+	.grande { 
+		font-size: 30px; 
+	}
+
+	/* Increase the left margin */
+	ul, ol { 
+		margin-left: 51px; 
+	}
+
+	/* Increase the font size */
+	h1, .h1 { 
+		font-size: 30px; 
+	} 
+
+	blockquote { 
+		/* Add left and right margins */
+		margin-left: 26px; 
+		margin-right: 26px; 
+		/* Increase the left and right padding */
+		padding: 0 26px; 
+	}
+
+	/* Change medium and small input fields from block to inline-block */
+	.input-medium, .input-small {
+		display: inline-block; 
+	}
+
+	/* Decrease input field width */
+	.input-medium { 
+		width: 65%; 
+	}
+
+	/* Decrease input field width */
+	.input-small { 
+		width: 35%; 
+	}
+
+	.alignleft { 
+		/* Float .alignleft images to the left */
+		float: left; 
+		/* Add a right margin */
+		margin-right: 15px; 
+	}
+
+	.alignright { 
+		/* Float .alignright images to the right */
+		float: right; 
+		/* Add a left margin */
+		margin-left: 15px; 
+	}
+
+	/* 
+	  Ensure that default nav elements are always showing.
+	  Without this, elements could be hidden if collapsed on a browser resize.
+	*/
+	.nav-mobile.collapse { 
+		height: auto !important; 
+	}
+}
