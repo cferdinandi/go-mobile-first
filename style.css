@@ -1,6 +1,6 @@
 /*
-	Theme Name: Go Mobile First v1.5
-	Version: 1.5
+	Theme Name: Go Mobile First with Header Background
+	Version: 1.4
 	Description: A mobile-first starter theme for WordPress
 	Author: Chris Ferdinandi
 	Author URI: http://gomakethings.com
@@ -78,7 +78,7 @@ del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var, 
 b, u, i, center, 
 dl, dt, dd, ol, ul, li, 
-button, fieldset, form, label, legend, 
+fieldset, form, label, legend, 
 table, caption, tbody, tfoot, thead, tr, th, td, 
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
@@ -158,12 +158,6 @@ a:hover, a:active {
 	outline: 0; 
 }
 
-/* Removes default button styling */
-button {
-    color: #0088cc;
-    background-color: transparent;
-}
-
 
 
 
@@ -178,7 +172,7 @@ button {
 	margin-left: auto;
 	margin-right: auto;
 	/* Adds a padding to the top of the container */
-	padding-top: 26px; 
+	padding-top: 26px;
 }
 
 
@@ -199,7 +193,7 @@ body {
 	/* Sets the background color for the site */
 	background: #ffffff; 
 	/* Adds padding to the right and left to the text doesn't run edge to edge */
-	padding-left: 20px;  
+	padding-left: 20px;
 	padding-right: 20px;  
 }
 
@@ -246,8 +240,8 @@ a:hover {
 	text-decoration: underline; 
 }
 
-.muted a, .muted button { 
-	/* Override default color if link or button is in a muted section of text */
+.muted a { 
+	/* Override default color if link is in a muted section of text */
 	color: #272727; 
 }
 
@@ -318,7 +312,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	/* Sets font weight */ 
 	font-weight: normal; 
 	/* Adds a bottom margin */
-	margin-bottom: 26px;
+	margin-bottom: 26px; 
 	/* Adds padding to the top (for more white space between sections) */
 	padding-top: 26px; 
 }
@@ -653,7 +647,7 @@ button, .btn {
 /*	6. ICONS */
 /*
 	For crisp, lightweight icons on any device, you should use consider using an icon font.
-	Icon fonts are small in size (the one for my site is only 8kb), require just one HTTP
+	Icon fonts are small in size (the one for my site is only 8kb), requires just one HTTP
 	request, and scale to any size while retaining sharpness.
 
 	I've put together a tutorial to help you get started: http://gomakethings.com/icon-fonts/
@@ -845,11 +839,23 @@ button, .btn {
 /*	10. NAVIGATION */
 
 /* 
-  Overrides default link behavior for logo text.
-  Will inhert header link color (currently set to dark gray).
+  Adds background color to navigation area.
+  Negative margin pull background color to the edge.
+  Padding balances out the negative margin.
 */
+.nav-wrap {
+    background-color: #272727;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 14px;
+}
+
+/* Overrides default link behavior for logo text. */
+.logo,
 .logo:hover { 
-	color: #272727; 
+	color: #ffffff; 
 	text-decoration: none; 
 }
 
@@ -859,12 +865,9 @@ button, .btn {
 	display: block;
 	float: none; 
 	/* Center navigation bar */
-    margin-left: auto; 
-    margin-right: auto;
+	margin-left: auto; 
+	margin-right: auto;
 	padding-top: 14px; 
-	/* Add gray lines above and below list */
-	border-top: 1px solid #e5e5e5; 
-	border-bottom: 1px solid #e5e5e5; 
 }
 
 /* Styling of individual nav elements */
@@ -875,11 +878,16 @@ button, .btn {
 }
 
 /* Styling for nav elements that are links */
-.nav > li > a, 
-.nav > li > button { 
+.nav > li > a { 
  	float: none; 
 	/* Add padding between elements */
 	padding: 10px 10px 11px; 
+}
+
+/* Overrides default link color for nav elements */
+.nav > li > a, 
+.nav > li > a:hover {
+    color: white;
 }
 
 /* Menu Button for collapsing menu on smaller screens */
@@ -1027,24 +1035,9 @@ q:before, q:after {
 		height: 0; 
 	}
 
-	/* 
-	   Display the menu toggle button (hidden by default above for more basic browsers).
-	   Remove padding at the top.
-	*/
+	/* Display the menu toggle button (hidden by default above for more basic browsers) */
 	.js .responsive-nav { 
-	    display: block;
-	    padding-top: 0;
-	}
-
-    /* Remove margin from the bottom of the menu toggle button */
-	.js .responsive-nav > li { 
-	    margin-bottom: 0;
-	}
-
-	/* Remove the border elements and top padding from the nav menu */
-	.js .nav-mobile > .nav { 
-		border: none; 
-	    padding-top: 0;
+		display: block; 
 	}
 
 	/* Display the nav links stacked vertically instead of horizontally */

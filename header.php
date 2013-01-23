@@ -58,60 +58,65 @@
 	<![endif]-->
 
 
-	<!-- Start Header content. Sets max width for content and centers text. -->
-	<header class="container text-center">
+    <!-- Adds background color to navigation area -->
+    <div class="nav-wrap">
+    
+	    <!-- Start Header content. Sets max width for content and centers text. -->
+	    <header class="container text-center">
 
-		<!-- Logo Text. Removes top padding and margin. Reduces bottom margin. -->
-		<h1 class="no-space-top small-space-bottom">
-			<!-- Link to homepage. Logo class overrides default link hover behavior. -->
-			<a class="logo" href="<?php echo get_option('home'); // Homepage URL ?>/">
-				<?php bloginfo( 'name' ); // Insert site title ?>
-			</a>
-		</h1>
+		    <!-- Logo Text. Removes top padding and margin. Reduces bottom margin. -->
+		    <h1 class="no-space-top small-space-bottom">
+			    <!-- Link to homepage. Logo class overrides default link hover behavior. -->
+			    <a class="logo" href="<?php echo get_option('home'); // Homepage URL ?>/">
+				    <?php bloginfo( 'name' ); // Insert site title ?>
+			    </a>
+		    </h1>
 
-		<!-- Description of site with lightened text and bottom margin. -->
-		<p class="muted">
-			<?php bloginfo( 'description' ); // Insert site description ?>
-		</p>
+		    <!-- Description of site with lightened text and bottom margin. -->
+		    <p class="muted no-space-bottom">
+			    <?php bloginfo( 'description' ); // Insert site description ?>
+		    </p>
 
-		<!-- Skip Navigation link for screen readers. Hidden off-screen. -->
-		<a class="screen-reader" href="#skipnav">Skip over navigation</a>
-
-
-		<!-- Start site navigation -->
-		<nav>
-
-			<!-- Menu button for small screen drop-down menu. Hidden on bigger screens and browsers without javascript. -->
-			<ul class="nav muted responsive-nav">
-				<li>
-					<button data-toggle="collapse" href="#menu">Menu</button>
-				</li>
-			</ul>
-
-			<!-- The navigation links. Extra div neccessary for drop-down behavior on small screens. -->
-			<div class="nav-mobile" id="menu">
-
-				<!-- Navigation list, with "lightened" text. Muted links display black. Remove "muted" tag to show default link colors. -->
-				<ul class="nav muted">
-					<li>
-						<!-- Link to homepage -->
-						<a href="<?php echo get_option('home'); ?>/">Home</a>
-					</li>
-					<li>
-						<!-- Link to about page -->
-						<a href="<?php echo get_option('home'); ?>/about/">About</a>
-					</li>
-					<li>
-						<!-- Link to RSS feed -->
-						<a href="<?php bloginfo('rss2_url'); ?>">RSS Feed</a>
-					</li>
-					<!-- Add additional links as needed -->
-				</ul>
-			</div>
-		</nav><!-- End site navigation -->
+		    <!-- Skip Navigation link for screen readers. Hidden off-screen. -->
+		    <a class="screen-reader" href="#skipnav">Skip over navigation</a>
 
 
-	</header><!-- End Header content -->
+		    <!-- Start site navigation -->
+		    <nav>
+
+			    <!-- Menu button for small screen drop-down menu. Hidden on bigger screens and browsers without javascript. -->
+			    <ul class="nav responsive-nav">
+				    <li>
+					    <a data-toggle="collapse" href="#menu">Menu</a>
+				    </li>
+			    </ul>
+
+			    <!-- The navigation links. Extra div neccessary for drop-down behavior on small screens. -->
+			    <div class="nav-mobile" id="menu">
+
+				    <!-- Navigation list, with "lightened" text. Muted links display black. Remove "muted" tag to show default link colors. -->
+				    <ul class="nav">
+					    <li>
+						    <!-- Link to homepage -->
+						    <a href="<?php echo get_option('home'); ?>/">Home</a>
+					    </li>
+					    <li>
+						    <!-- Link to about page -->
+						    <a href="<?php echo get_option('home'); ?>/about/">About</a>
+					    </li>
+					    <li>
+						    <!-- Link to RSS feed -->
+						    <a href="<?php bloginfo('rss2_url'); ?>">RSS Feed</a>
+					    </li>
+					    <!-- Add additional links as needed -->
+				    </ul>
+			    </div>
+		    </nav><!-- End site navigation -->
+
+
+	    </header><!-- End Header content -->
+	    
+	</div><!-- End Nav Wrap -->
 
 
 	<!-- 
