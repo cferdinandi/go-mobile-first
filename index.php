@@ -1,6 +1,6 @@
 <?php get_header(); // Pulls in the header.php template ?>
 
-<!-- This is the temlpate for the page that displays all of your blog posts -->
+<!-- This is the template for the page that displays all of your blog posts -->
 
 
 

@@ -1,4 +1,4 @@
-<!-- The content of this template is what appears at teh bottom of each page. -->
+<!-- The content of this template is what appears at the bottom of each page. -->
 
 		<!-- Start the footer section. Class tags center and lighten text, and reduce font size. -->
 		<footer class="small muted text-center">

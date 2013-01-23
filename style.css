@@ -1,6 +1,6 @@
 /*
-	Theme Name: Go Mobile First v1.0
-	Version: 1.0
+	Theme Name: Go Mobile First v1.4
+	Version: 1.4
 	Description: A mobile-first starter theme for WordPress
 	Author: Chris Ferdinandi
 	Author URI: http://gomakethings.com
@@ -108,6 +108,13 @@ html {
 	-ms-text-size-adjust: 100%; 
 } 
 
+/* Overrides default browser styling on tables */
+table { 
+    max-width: 100%; 
+    border-collapse: collapse; 
+    border-spacing: 0; 
+}
+
 /* Corrects inline-block display not defined in IE 8/9 */
 audio, canvas, video { 
 	display: inline-block; 
@@ -120,9 +127,18 @@ audio:not([controls]) {
 	display: none; 
 }
 
-/* Auto-resizes images, embeds and HTML5 videos on smaller screens */
+/* Auto-resizes images and HTML5 videos on smaller screens */
 img, video { 
 	max-width: 100%; height: auto; 
+}
+
+/* 
+  Auto-resizes iframes, objects and embeds on smaller screens.
+  Height and more precise resizing done by FitVids.js in javascript file.
+  This serves as fallback for browsers without javascript.
+ */
+iframe, object, embed {
+	width: 100%;
 }
 
 /* Maintain image sharpness when resizing in MS browsers */
@@ -153,9 +169,10 @@ a:hover, a:active {
 	/* Sets the maximum width of the content */
 	max-width: 640px; 
 	/* Centers the container */
-	margin: 0 auto; 
+	margin-left: auto;
+	margin-right: auto;
 	/* Adds a padding to the top of the container */
-	padding: 26px 0 0 0; 
+	padding-top: 26px; 
 }
 
 
@@ -176,12 +193,13 @@ body {
 	/* Sets the background color for the site */
 	background: #ffffff; 
 	/* Adds padding to the right and left to the text doesn't run edge to edge */
-	padding: 0 20px; 
+	padding-left: 20px;  
+	padding-right: 20px;  
 }
 
 p { 
 	/* Adds a margin to the bottom of each paragraph */
-	margin: 0 0 26px 0; 
+	margin-bottom: 26px; 
 }
 
 /* For sections of text that should be smaller in size */
@@ -243,10 +261,9 @@ a:hover img {
 
 
 ul, ol { 
-	/* Set padding for ordered and unordered lists */
-	padding: 0; 
 	/* Add margin to the bottom and left of ordered and unordered lists */
-	margin: 0 0 26px 26px; 
+	margin-bottom: 26px; 
+    margin-left: 26px; 
 }
 
 ul ul, ul ol, ol ol, ol ul { 
@@ -267,7 +284,7 @@ ol {
 
 li { 
 	/* Adds a slight margin between lists items */
-	margin: 0 0 8px 0; 
+	margin-bottom: 8px; 
 }
 
 /* Overrides default list styles for unstyled, unordered lists */
@@ -295,9 +312,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	/* Sets font weight */ 
 	font-weight: normal; 
 	/* Adds a bottom margin */
-	margin: 0 0 26px 0; 
+	margin-bottom: 26px;
 	/* Adds padding to the top (for more white space between sections) */
-	padding: 26px 0 0 0; 
+	padding-top: 26px; 
 }
 
 /* Sets header specific styles like sizes and emphasis */
@@ -387,9 +404,10 @@ blockquote {
 	/* Adds a thin gray border to the left of the quote */
 	border-left: 2px solid #e5e5e5; 
 	/* Adds a bottom margin to blockquotes */
-	margin: 0 0 26px 0; 
+	margin-bottom: 26px; 
 	/* Adds padding to the left and right of the quote */
-	padding: 0 20px; 
+	padding-left: 20px; 
+	padding-right: 20px; 
 }
 
 /* Shared styling for displaying code and unformatted text */
@@ -415,7 +433,7 @@ pre {
 	/* Sets unformatted text box to span full width of page */
 	display: block; 
 	padding: 8.5px; 
-	margin: 0 0 26px 0; 
+	margin-bottom: 26px; 
 	font-size: 13px; 
 	line-height: 20px; 
 	background-color: #f5f5f5; 
@@ -443,7 +461,7 @@ pre code {
 	font-size: 15px; 
 	font-style: italic; 
 	color: #808080; 
-	padding: 6px 0 0 0; 
+	padding-top: 6px; 
 	text-align: center; 
 }
 
@@ -462,9 +480,8 @@ form, fieldset {
 legend, label { 
 	/* Sets legends and labels to span full width of the page */
 	display: block; 
-	padding: 0; 
 	/* Adds a slight margin below legends and labels */
-	margin: 0 0 5px 0; 
+	margin-bottom: 5px; 
 }
 
 /* Sets shared styles for inputs, text-boxes and select buttons */
@@ -518,7 +535,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 	width: auto; 
 	height: auto; 
 	padding: 0; 
-	margin: 0 0 3px 0; 
+	margin-bottom: 3px; 
 	cursor: pointer; 
 }
 
@@ -630,11 +647,10 @@ button, .btn {
 /*	6. ICONS */
 /*
 	For crisp, lightweight icons on any device, you should use consider using an icon font.
-	Icon fonts are small in size (the one for my site is only 8kb), requires just one HTTP
+	Icon fonts are small in size (the one for my site is only 8kb), require just one HTTP
 	request, and scale to any size while retaining sharpness.
 
-	IcoMoon is a free app that let's you build your own icon font set. It even provides you
-	with the styling. I highly recommend it. http://icomoon.io/#toHome
+	I've put together a tutorial to help you get started: http://gomakethings.com/icon-fonts/
 
 	Add your icon styles here.
 */
@@ -720,28 +736,101 @@ button, .btn {
 
 /*	9. TABLES */
 
-/* Overrides default browser styling on tables */
-table { max-width: 100%; border-collapse: collapse; border-spacing: 0; }
-
 /*
   Basic table styling taken from Twitter Bootstrap.
   Visit the site for examples and usage.
   http://twitter.github.com/bootstrap/
 */
-.table { width: 100%; margin-bottom: 18px; }
-.table th, .table td { padding: 8px; line-height: 18px; text-align: left; border-top: 1px solid #ddd; }
-.table th { font-weight: bold; vertical-align: bottom; }
-.table td { vertical-align: top; }
-.table thead:first-child tr th, .table thead:first-child tr td { border-top: 0; }
-.table tbody + tbody { border-top: 2px solid #ddd; }
-.table-condensed th, .table-condensed td { padding: 4px 5px; }
-.table-bordered { border: 1px solid #ddd; border-collapse: separate; *border-collapse: collapsed; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
-.table-bordered th + th, .table-bordered td + td, .table-bordered th + td, .table-bordered td + th { border-left: 1px solid #ddd; }
-.table-bordered thead:first-child tr:first-child th, .table-bordered tbody:first-child tr:first-child th, .table-bordered tbody:first-child tr:first-child td { border-top: 0; }
-.table-bordered thead:first-child tr:first-child th:first-child, .table-bordered tbody:first-child tr:first-child td:first-child { -webkit-border-radius: 4px 0 0 0; -moz-border-radius: 4px 0 0 0; border-radius: 4px 0 0 0; }
-.table-bordered thead:first-child tr:first-child th:last-child, .table-bordered tbody:first-child tr:first-child td:last-child { -webkit-border-radius: 0 4px 0 0; -moz-border-radius: 0 4px 0 0; border-radius: 0 4px 0 0; }
-.table-bordered thead:last-child tr:last-child th:first-child, .table-bordered tbody:last-child tr:last-child td:first-child { -webkit-border-radius: 0 0 0 4px; -moz-border-radius: 0 0 0 4px; border-radius: 0 0 0 4px; }
-.table-bordered thead:last-child tr:last-child th:last-child, .table-bordered tbody:last-child tr:last-child td:last-child { -webkit-border-radius: 0 0 4px 0; -moz-border-radius: 0 0 4px 0; border-radius: 0 0 4px 0; }
+
+/* Basic table formatting */
+.table { 
+    width: 100%; 
+    margin-bottom: 26px; 
+}
+
+.table th, 
+.table td { 
+    padding: 8px; 
+    line-height: 25px; 
+    text-align: left; 
+    border-top: 1px solid #ddd; 
+}
+
+.table th { 
+    font-weight: bold; 
+    vertical-align: bottom; 
+}
+
+.table td { 
+    vertical-align: top; 
+}
+
+.table thead:first-child tr th, 
+.table thead:first-child tr td { 
+    border-top: 0; 
+}
+
+.table tbody + tbody { 
+    border-top: 2px solid #ddd; 
+}
+
+/* Reduced padding between cells */
+.table-condensed th, 
+.table-condensed td { 
+    padding: 4px 5px; 
+
+}
+
+/* Adds borders around table */
+.table-bordered { 
+    border: 1px solid #ddd; 
+    border-collapse: separate; 
+    *border-collapse: collapsed; 
+    -webkit-border-radius: 4px; 
+    -moz-border-radius: 4px; 
+    border-radius: 4px; 
+}
+
+.table-bordered th + th, 
+.table-bordered td + td, 
+.table-bordered th + td, 
+.table-bordered td + th { 
+    border-left: 1px solid #ddd; 
+}
+
+.table-bordered thead:first-child tr:first-child th, 
+.table-bordered tbody:first-child tr:first-child th, 
+.table-bordered tbody:first-child tr:first-child td { 
+    border-top: 0; 
+}
+
+.table-bordered thead:first-child tr:first-child th:first-child, 
+.table-bordered tbody:first-child tr:first-child td:first-child { 
+    -webkit-border-radius: 4px 0 0 0; 
+    -moz-border-radius: 4px 0 0 0; 
+    border-radius: 4px 0 0 0; 
+}
+
+.table-bordered thead:first-child tr:first-child th:last-child, 
+.table-bordered tbody:first-child tr:first-child td:last-child { 
+    -webkit-border-radius: 0 4px 0 0; 
+    -moz-border-radius: 0 4px 0 0; 
+    border-radius: 0 4px 0 0; 
+}
+
+.table-bordered thead:last-child tr:last-child th:first-child, 
+.table-bordered tbody:last-child tr:last-child td:first-child { 
+    -webkit-border-radius: 0 0 0 4px; 
+    -moz-border-radius: 0 0 0 4px; 
+    border-radius: 0 0 0 4px; 
+}
+
+.table-bordered thead:last-child tr:last-child th:last-child, 
+.table-bordered tbody:last-child tr:last-child td:last-child { 
+    -webkit-border-radius: 0 0 4px 0; 
+    -moz-border-radius: 0 0 4px 0; 
+    border-radius: 0 0 4px 0; 
+}
 
 
 
@@ -763,11 +852,13 @@ table { max-width: 100%; border-collapse: collapse; border-spacing: 0; }
 	/* Set list to block element */
 	display: block;
 	float: none; 
-	margin: 0 auto; 
+	/* Center navigation bar */
+    margin-left: auto; 
+    margin-right: auto;
 	padding-top: 14px; 
 	/* Add gray lines above and below list */
-		border-top: 1px solid #e5e5e5; 
-		border-bottom: 1px solid #e5e5e5; 
+	border-top: 1px solid #e5e5e5; 
+	border-bottom: 1px solid #e5e5e5; 
 }
 
 /* Styling of individual nav elements */
@@ -980,7 +1071,8 @@ q:before, q:after {
 		margin-left: 26px; 
 		margin-right: 26px; 
 		/* Increase the left and right padding */
-		padding: 0 26px; 
+		padding-left: 26px; 
+        	padding-right: 26px; 
 	}
 
 	/* Change medium and small input fields from block to inline-block */
