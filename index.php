@@ -2,7 +2,7 @@
 
 <!-- This is the template for the page that displays all of your blog posts -->
 
-
+<div class="main">
 
 	<?php if (have_posts()) : // If you have any blog posts ?>
 
@@ -78,5 +78,8 @@
 		</article><!-- End of the error message content -->
 	<?php endif; // End if statement ?>
 
+</div>
+
+<?php get_sidebar(); // Pulls in the sidebar.php template ?>
 
 <?php get_footer(); // Pulls in the footer.php template ?>

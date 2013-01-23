@@ -1,7 +1,9 @@
 <!-- The content of this template is what appears at the bottom of each page. -->
 
+	</section><!-- End the main section (started in the header) -->
+
 		<!-- Start the footer section. Class tags center and lighten text, and reduce font size. -->
-		<footer class="small muted text-center">
+		<footer class="container small muted text-center">
 
 			<!-- Add a line at the top of the footer -->
 			<hr>
@@ -20,8 +22,6 @@
 			<p><a href="http://gomakethings.com/go-mobile-first/">Go Mobile First theme by Chris Ferdinandi</a>.</p>
 			
 		</footer><!-- End footer section -->
-
-	</section><!-- End the main section (started in the header) -->
 
 	<?php wp_footer(); // WordPress footer info. Used to include javascript files in the footer. DO NOT DELETE. ?>
 

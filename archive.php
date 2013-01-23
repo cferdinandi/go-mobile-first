@@ -2,6 +2,8 @@
 
 <!-- This is the template for posts by category, tag, etc. -->
 
+<div class="main">
+
 	<?php if (have_posts()) : // if posts for that category, tag, etc. exist... ?>
 
 		<!-- Start of the heading section -->
@@ -99,5 +101,9 @@
 
 		</article><!-- End of the error message content -->
 	<?php endif; // End if statement ?>
+
+</div>
+
+<?php get_sidebar(); // Pulls in the sidebar.php template ?>
 
 <?php get_footer(); // Pulls in the footer.php template ?>

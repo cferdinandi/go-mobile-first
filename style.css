@@ -1,6 +1,6 @@
 /*
-	Theme Name: Go Mobile First v1.5
-	Version: 1.5
+	Theme Name: Go Mobile First with Sidebar
+	Version: 1.4
 	Description: A mobile-first starter theme for WordPress
 	Author: Chris Ferdinandi
 	Author URI: http://gomakethings.com
@@ -78,7 +78,7 @@ del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var, 
 b, u, i, center, 
 dl, dt, dd, ol, ul, li, 
-button, fieldset, form, label, legend, 
+fieldset, form, label, legend, 
 table, caption, tbody, tfoot, thead, tr, th, td, 
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
@@ -156,12 +156,6 @@ a:focus {
 /* Improves readability when focused and also mouse hovered in all browsers */
 a:hover, a:active { 
 	outline: 0; 
-}
-
-/* Removes default button styling */
-button {
-    color: #0088cc;
-    background-color: transparent;
 }
 
 
@@ -246,8 +240,8 @@ a:hover {
 	text-decoration: underline; 
 }
 
-.muted a, .muted button { 
-	/* Override default color if link or button is in a muted section of text */
+.muted a { 
+	/* Override default color if link is in a muted section of text */
 	color: #272727; 
 }
 
@@ -875,8 +869,7 @@ button, .btn {
 }
 
 /* Styling for nav elements that are links */
-.nav > li > a, 
-.nav > li > button { 
+.nav > li > a { 
  	float: none; 
 	/* Add padding between elements */
 	padding: 10px 10px 11px; 
@@ -1027,24 +1020,14 @@ q:before, q:after {
 		height: 0; 
 	}
 
-	/* 
-	   Display the menu toggle button (hidden by default above for more basic browsers).
-	   Remove padding at the top.
-	*/
+	/* Display the menu toggle button (hidden by default above for more basic browsers) */
 	.js .responsive-nav { 
-	    display: block;
-	    padding-top: 0;
+		display: block; 
 	}
 
-    /* Remove margin from the bottom of the menu toggle button */
-	.js .responsive-nav > li { 
-	    margin-bottom: 0;
-	}
-
-	/* Remove the border elements and top padding from the nav menu */
+	/* Remove the border elements from the nav menu */
 	.js .nav-mobile > .nav { 
 		border: none; 
-	    padding-top: 0;
 	}
 
 	/* Display the nav links stacked vertically instead of horizontally */
@@ -1056,7 +1039,29 @@ q:before, q:after {
 
 
 /* For screens greater than 680 pixels in width */
-@media (min-width: 681px) {
+@media (min-width: 1001px) {
+
+    /* 
+        A fixed width on bigger screens. 
+        Set the container width to 960 pixels. 
+        We need to reset max-width to match.
+    */
+    .container {
+        width: 960px;
+        max-width: 960px;
+    }
+
+    /* Set width of main content area and float to the right */
+    .main {
+        width: 640px;
+        float: right;
+    }
+
+    /* Set width of sidebar and float to the left */
+    .aside {
+        width: 260px;
+        float: left;
+    }
 
 	/* Increase the line height for readability */
 	body, input, textarea, select { 
@@ -1120,6 +1125,10 @@ q:before, q:after {
 		/* Add a left margin */
 		margin-left: 15px; 
 	}
+
+	.hide-big-screens {
+        display: none;
+    }
 
 	/* 
 	  Ensure that default nav elements are always showing.

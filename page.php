@@ -2,22 +2,28 @@
 
 <!-- This is the template for pages (like the About page) -->
 
-<!-- Start of the page content -->
-<article id="post-<?php the_ID(); // Insert the page ID ?>">
+<div class="main">
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); // The WordPress post loop. If there's content for this page, do the following... ?>
+    <!-- Start of the page content -->
+    <article id="post-<?php the_ID(); // Insert the page ID ?>">
 
-		<!-- Start of the heading section -->
-		<header>
-			<!-- The page heading -->
-			<h1><?php the_title(); // The post title ?></h1>
-		</header>
+	    <?php if (have_posts()) : while (have_posts()) : the_post(); // The WordPress post loop. If there's content for this page, do the following... ?>
 
-		<!-- The page content -->
-		<?php the_content(); ?>
+		    <!-- Start of the heading section -->
+		    <header>
+			    <!-- The page heading -->
+			    <h1><?php the_title(); // The post title ?></h1>
+		    </header>
 
-	<?php endwhile; endif; // End the post loop ?>
+		    <!-- The page content -->
+		    <?php the_content(); ?>
 
-</article><!-- End the page content -->
+	    <?php endwhile; endif; // End the post loop ?>
+
+    </article><!-- End the page content -->
+
+</div>
+
+<?php get_sidebar(); // Pulls in the sidebar.php template ?>
 
 <?php get_footer(); // Pulls in the footer.php template ?>
