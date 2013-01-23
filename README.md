@@ -25,11 +25,11 @@ Go Mobile First uses a simple, muted color palette. Colors were chosen for their
 
 Feel free to customize as you see fit (you might want to use the free [Color Oracle app](http://colororacle.org/) to check for accessibility).
 
-Link Blue: #0088cc
-Button Hover Blue: #005580
-Dark Gray: #272727
-Muted Gray: #808080
-Gray Lines & Borders: #e5e5e5
+* Link Blue: #0088cc
+* Button Hover Blue: #005580
+* Dark Gray: #272727
+* Muted Gray: #808080
+* Gray Lines & Borders: #e5e5e5
 
 ### Font Stack
 "Helvetica Neue", Helvetica, Arial, sans-serif
