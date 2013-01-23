@@ -84,7 +84,7 @@
 			<!-- Menu button for small screen drop-down menu. Hidden on bigger screens and browsers without javascript. -->
 			<ul class="nav muted responsive-nav">
 				<li>
-					<a data-toggle="collapse" href="#menu">Menu</a>
+					<button data-toggle="collapse" href="#menu">Menu</button>
 				</li>
 			</ul>
 
