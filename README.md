@@ -1,4 +1,4 @@
-# Go Mobile First
+# [DEPRECATED] Go Mobile First
 Go Mobile First is a mobile-first boilerplate for WordPress.
 
 This style-light theme is ready to use right out of the box, but I've also added lots of comments throughout the code so that you can easily modify to suit your needs.
@@ -64,5 +64,6 @@ Learn how to get the most out of Go Mobile First:
   * Initial release
 
 ## License
-his theme, like WordPress, is licensed under the [GNU General Public License](http://www.gnu.org/copyleft/gpl.html) as published by the Free Software Foundation.
+
+The code is available under the [MIT License](LICENSE.md).
 
